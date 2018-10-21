@@ -39,6 +39,13 @@ const posts = [
     body: 'raise from the ashes',
     published: true,
     author: '3'
+  },
+  {
+    id: '4',
+    title: 'herew we go again',
+    body: 'ground hog fay',
+    published: true,
+    author: '3'
   }
 ]
 
