@@ -3,7 +3,8 @@ node_modules
 *.log
 yarn.lock
 env
-prisma/docker-compose.yml
+
+
 # misc
 .env
 .DS_Store
@@ -17,3 +18,5 @@ yarn-debug.log*
 yarn-error.log*
 
 config
+prisma/docker-compose.yml
+dist
