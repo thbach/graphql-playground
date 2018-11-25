@@ -31,9 +31,7 @@ const SideList = ({
             </button>
           ))
         ) : (
-          <div className="p-4 text-muted h4 text-center">
-            You have no conversations. Find a user to get started.
-          </div>
+          <div className="p-4 text-muted h4 text-center">Loading...</div>
         )}
       </div>
     </div>

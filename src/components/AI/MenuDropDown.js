@@ -1,45 +1,45 @@
-import React from 'react'
-import PropTypes from 'prop-types'
+import React from "react";
+import PropTypes from "prop-types";
 import {
   Dropdown,
   DropdownToggle,
   DropdownMenu,
   DropdownItem
-} from 'reactstrap'
-import { graphql } from 'react-apollo'
-import detectLanguage from '../../graphql/queries/detectLanguage'
+} from "reactstrap";
+import { graphql } from "react-apollo";
+import detectLanguage from "../../graphql/queries/detectLanguage";
 const langMap = [
-  { code: 'en', lang: 'English' },
-  { code: 'zh', lang: 'Chinese' },
-  { code: 'fr', lang: 'French' },
-  { code: 'pt', lang: 'Portuguese' },
-  { code: 'es', lang: 'Spanish' }
-]
+  { code: "en", lang: "English" },
+  { code: "zh", lang: "Chinese" },
+  { code: "fr", lang: "French" },
+  { code: "pt", lang: "Portuguese" },
+  { code: "es", lang: "Spanish" }
+];
 const BOTS = {
-  CHUCKBOT: 'ChuckBot',
-  MOVIEBOT: 'MovieBot'
-}
+  CHUCKBOT: "ChuckBot",
+  MOVIEBOT: "MovieBot"
+};
 
 class AIMenu extends React.Component {
   componentDidUpdate(prevProps, prevState, snapshot) {
     const {
       data: { detectLanguage: { response: oldResponse = null } = {} } = {}
-    } = prevProps
-    const { data: { detectLanguage: { response } = {} } = {} } = this.props
+    } = prevProps;
+    const { data: { detectLanguage: { response } = {} } = {} } = this.props;
 
     if (!oldResponse && response) {
-      const code = JSON.parse(response)[0].LanguageCode
-      console.log(`Detected Language from Direct Query: ${code}`)
-      this.props.setLanguageCode(code)
+      const code = JSON.parse(response)[0].LanguageCode;
+      console.log(`Detected Language from Direct Query: ${code}`);
+      this.props.setLanguageCode(code);
     }
   }
 
   render() {
-    const { msg } = this.props
-    const { data: { detectLanguage: { response } = {} } = {} } = this.props
-    const code = response ? JSON.parse(response)[0].LanguageCode : null
+    const { msg } = this.props;
+    const { data: { detectLanguage: { response } = {} } = {} } = this.props;
+    const code = response ? JSON.parse(response)[0].LanguageCode : null;
     const hasText =
-      this.props.msg.content && this.props.msg.content.trim().length
+      this.props.msg.content && this.props.msg.content.trim().length;
     return (
       <Dropdown
         isOpen={this.props.dropdownOpen}
@@ -47,7 +47,7 @@ class AIMenu extends React.Component {
       >
         <DropdownToggle
           className="border-0 btn-sm py-0"
-          style={{ backgroundColor: 'transparent' }}
+          style={{ backgroundColor: "transparent" }}
         >
           <i className="fas fa-caret-down" />
         </DropdownToggle>
@@ -56,23 +56,6 @@ class AIMenu extends React.Component {
           <DropdownItem onClick={this.props.dictate} className="small">
             <i className="fas fa-microphone-alt border border-dark rounded-circle p-1" />
             <span className="ml-1">Text to Speech</span>
-          </DropdownItem>
-          <DropdownItem header>Bots</DropdownItem>
-          <DropdownItem
-            value="ChuckBot"
-            onClick={e => this.props.doBot({ bot: BOTS.CHUCKBOT })}
-            className="small"
-          >
-            <i className="fas fa-robot border border-dark rounded-circle p-1" />
-            <span className="ml-1">ChuckBot</span>
-          </DropdownItem>
-          <DropdownItem
-            value="MovieBot"
-            onClick={e => this.props.doBot({ bot: BOTS.MOVIEBOT })}
-            className="small"
-          >
-            <i className="fas fa-robot border border-dark rounded-circle p-1" />
-            <span className="ml-1">MovieBot</span>
           </DropdownItem>
           {hasText ? (
             <React.Fragment>
@@ -104,7 +87,7 @@ class AIMenu extends React.Component {
           ) : null}
         </DropdownMenu>
       </Dropdown>
-    )
+    );
   }
 }
 
@@ -118,7 +101,7 @@ AIMenu.propTypes = {
   doBot: PropTypes.func.isRequired,
   dictate: PropTypes.func.isRequired,
   data: PropTypes.object
-}
+};
 
 const AIMenuWithData = graphql(detectLanguage, {
   skip: props => !props.msg || !props.dropdownOpen,
@@ -127,6 +110,6 @@ const AIMenuWithData = graphql(detectLanguage, {
       text: props.msg.content
     }
   })
-})(AIMenu)
+})(AIMenu);
 
-export default AIMenuWithData
+export default AIMenuWithData;

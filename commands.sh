@@ -1,5 +1,15 @@
 yarn add aws-amplify aws-amplify-react aws-appsync aws-appsync-react bootstrap downshift graphql-tag lodash.clonedeep lodash.debounce lodash.get moment node-sass-chokidar npm-run-all react react-apollo react-click-n-hold react-custom-scrollbars react-d3-cloud react-dom react-scripts react-sizeme react-sound react-speech-recognition react-spinners react-tiny-popover reactstrap rxjs uuid
 yarn add -D babel-core babel-eslint babel-runtime eslint-config-prettier eslint-config-standard eslint-plugin-import eslint-plugin-node eslint-plugin-promise eslint-plugin-react eslint-plugin-standard prettier-eslint standard
+api-demo
+guest / bot
+Qwe123!@#
+
+conversation: {id: "707c4208-12a6-4e68-b799-54bba7c8c4aa", name: "direct", createdAt: "2018-11-25T09:49:02.361Z", associated: {…}, __typename: "Conversation"}
+convoLinkUserId: "24c881fe-b443-46e3-a6a8-0ba2decb7570"
+id: "bd11c074-5d52-4971-bafd-b95e02a6ed29"
+name: "api-demo (chat)"
+status: "READY"
+
 
 export AWS_REGION=$(jq -r '.providers.awscloudformation.Region' amplify/#current-cloud-backend/amplify-meta.json)
 echo $AWS_REGION

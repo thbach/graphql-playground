@@ -191,8 +191,6 @@ export default class Message extends React.Component {
         : isUser
         ? "bg-ember text-white"
         : "bg-ampligygray text-white");
-    const checkStatusClassName =
-      "ml-1 " + (msg.isSent ? "text-blue" : "text-muted");
 
     return (
       <div className={outerClassName}>
@@ -386,12 +384,6 @@ export default class Message extends React.Component {
                 <Bot botName={bot} msg={msg} update={this.applyState} />
               </div>
             )}
-          </div>
-          <div className="small d-block text-right">
-            {formatDate(msg.createdAt)}
-            <span className={checkStatusClassName}>
-              <i className="fas fa-check" />
-            </span>
           </div>
         </div>
       </div>
