@@ -24,7 +24,7 @@
     ]
   },
   "processBehavior": "BUILD",
-  "voiceId": "Matthew",
+  "voiceId": "Joanna",
   "childDirected": false,
   "locale": "en-US",
   "idleSessionTTLInSeconds": 300,

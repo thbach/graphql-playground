@@ -4,7 +4,7 @@
   "fulfillmentActivity": {
     "type": "CodeHook",
     "codeHook": {
-      "uri": "<LAMBDA_ARN>",
+      "uri": "arn:aws:lambda:us-west-2:563120018713:function:graphchat-20181124020211-extra-aiml-ChuckBot-14DF129SXBHG0",
       "messageVersion": "1.0"
     }
   },

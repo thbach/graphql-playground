@@ -36,11 +36,11 @@ const BOTS = {
 };
 
 const voiceMap = {
-  en: "Matthew",
+  en: "Joanna",
   zh: "Zhiyu",
-  pt: "Ricardo",
-  fr: "Mathieu",
-  es: "Miguel"
+  pt: "Vitoria",
+  fr: "Celine",
+  es: "Penelope"
 };
 
 export default class Message extends React.Component {
